@@ -1,0 +1,9 @@
+{
+	"python.defaultInterpreterPath": "/usr/local/bin/python",
+	"python.formatting.blackPath": "/Volumes/SourceCode/prefect2-test/venv/bin/black",
+	"python.formatting.provider": "black",
+	"python.analysis.autoFormatStrings": true,
+	"python.analysis.autoImportCompletions": true,
+	"python.analysis.completeFunctionParens": true,
+	"python.analysis.downloadStubs": true
+}

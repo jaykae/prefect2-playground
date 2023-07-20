@@ -1,0 +1,3 @@
+prefect~=2.11
+prefect-dask~=0.2
+prefect-docker~=0.3
