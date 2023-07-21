@@ -11,4 +11,4 @@
 - Open one last new terminal window and deploy the flows (activate your venv first): `prefect deploy --all`
 - Schedule the run: `prefect deployment run 'SummarizeData/default'`
     -  Check the 2nd window that has the worker running in it for logging details
-    -  Check the UI for the results
+    -  Check the UI (http://127.0.0.1) for the results
