@@ -17,9 +17,13 @@
 - Artifacts
   - Easy enough to use, but everything has to be converted to something Pydantic serializable which defaults to using the standard json library which does not handle dates well.  Would like to see if there is a way to implement a different serializer/deserializer as orjson/ujson python libs support datetime conversion
 
- # Future Things to Play with
- - K8S deployment
- - Local development setup (I really want to figure out compose)
- - Task level concurrency and what happens where there are too many tasks in a queue
- - Blocks in general
- - prefect.yaml, it's newer and a lot of the documentation is still lacking on the best way to use it
+# Future Things to Play with
+- K8S deployment
+- Local development setup (I really want to figure out compose)
+- Task level concurrency and what happens where there are too many tasks in a queue
+- Blocks in general
+- prefect.yaml, it's newer and a lot of the documentation is still lacking on the best way to use it
+- DASK!
+  - Dask in K8S long running cluster
+  - Dask in a container for optimizing long processes
+  - Data transformation tasks
