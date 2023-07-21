@@ -1,15 +1,14 @@
 # pylint: disable=W1203,W4902,W3101
 
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import requests
 from prefect import flow, get_run_logger, task
 from prefect.artifacts import create_table_artifact
-from prefect.tasks import task_input_hash
 
 
-@task(cache_key_fn=task_input_hash, cache_expiration=timedelta(minutes=60))
+@task
 def get_data(url: str) -> dict:
     logger = get_run_logger()
     logger.info(f"Attempting to download {url}")
@@ -76,7 +75,7 @@ def filter_data(data: dict) -> dict:
 
 @task
 def persist_results(data: dict, artifact_name: str):
-    artifact_key = 'sumarized_data' if artifact_name is None else artifact_name
+    artifact_key = "sumarized_data" if artifact_name is None else artifact_name
     json.dumps(data, default=str)
     create_table_artifact(
         table=json.loads(json.dumps(data, default=str)),
