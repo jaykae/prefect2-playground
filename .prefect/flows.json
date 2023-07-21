@@ -1,0 +1,4 @@
+{
+  "Dask Flow": "flows/dask_flow.py:dask_flow",
+  "Standard Flow": "flows/standard_flow.py:standard_flow"
+}
