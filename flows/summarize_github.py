@@ -76,7 +76,6 @@ def filter_data(data: dict) -> dict:
 @task
 def persist_results(data: dict, artifact_name: str):
     artifact_key = "summarized-data" if artifact_name is None else artifact_name
-    json.dumps(data, default=str)
     create_table_artifact(
         table=json.loads(json.dumps(data, default=str)),
         key=artifact_key,
