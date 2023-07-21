@@ -76,16 +76,17 @@ def filter_data(data: dict) -> dict:
 
 @task
 def persist_results(data: dict, artifact_name: str):
+    artifact_key = 'sumarized_data' if artifact_name is None else artifact_name
     json.dumps(data, default=str)
     create_table_artifact(
         table=json.loads(json.dumps(data, default=str)),
-        key=artifact_name,
+        key=artifact_key,
         description="Github activity sorted by most performed functions",
     )
 
 
-@flow(name="Standard Flow")
-def standard_flow(
+@flow(name="SummarizeData")
+def SummarizeData(
     url: str = "https://github.com/json-iterator/test-data/raw/master/large-file.json",
     artifact_name: str = None,
 ):
@@ -95,4 +96,4 @@ def standard_flow(
 
 
 if __name__ == "__main__":
-    standard_flow()
+    SummarizeData()

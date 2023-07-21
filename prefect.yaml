@@ -30,12 +30,13 @@ deployments:
   version: null
   tags: []
   description: null
-  entrypoint: flows/standard_flow.py:standard_flow
+  entrypoint: flows/summarize_github.py:SummarizeData
   parameters: {}
   work_pool:
     name: default
     work_queue_name: default
     job_variables:
       image: '{{ build-image.image }}'
+      image_pull_policy: Never
 
   schedule: null

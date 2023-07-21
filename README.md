@@ -1,2 +1,11 @@
 # Setup
-- Rename/copy `Docker/.env.dist` to `Docker/.env`
+- Clone this repo: `git clone https://github.com/jaykae/prefect2-playground.git`
+- Create a virtual environment: `python -m venv venv`
+- Activate the environment: `source ./venv/bin/activate`
+- Install packages: `pip install -r requirements.txt`
+    - Optionally development tools: `pip install -r requirements.txt`
+- Start the server: `prefect server start`
+- Configure the environment: `prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api`
+- Open a new terminal window and start a worker: `prefect worker start -n docker-worker -p default -q default -t docker`
+- Open another new terminal window and deploy the flows: `prefect deploy --all`
+- Lastly schedule the run: `prefect deployment run 'Standard Flow/default`
